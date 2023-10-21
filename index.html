@@ -9,33 +9,36 @@
  <body >
   <div class="calculator">
     <div class="display">
-      <input type="text" placeholder="0" id="input" disabled />
+      <input type="text" placeholder="0" id="input" readonly />
+      <span id="firstNum"></span>
+      <span id="secondNum"></span>
+      <span id="result"></span>
     </div>
     <div class="buttons">
       <input type="button" value="AC" id="clear" />
       
       <input type="button" value="DEL" id="erase" />
       
-      <input type="button" value="/" class="input-button" />
-      <input type="button" value="*" class="input-button" />
+      <input type="button" value="/" class="input-button" onclick="appendToResult('/')"/>
+      <input type="button" value="*" class="input-button" onclick="appendToResult('*')"/>
 
-      <input type="button" value="7" class="input-button" />
-      <input type="button" value="8" class="input-button" />
-      <input type="button" value="9" class="input-button" />
-      <input type="button" value="-" class="input-button" />
+      <input type="button" value="7" class="input-button" onclick="appendToResult('7')"/>
+      <input type="button" value="8" class="input-button" onclick="appendToResult('8')"/>
+      <input type="button" value="9" class="input-button" onclick="appendToResult('9')"/>
+      <input type="button" value="-" class="input-button" onclick="appendToResult('-')"/>
 
-      <input type="button" value="6" class="input-button" />
-      <input type="button" value="5" class="input-button" />
-      <input type="button" value="4" class="input-button" />
-      <input type="button" value="+" class="input-button" />
+      <input type="button" value="6" class="input-button" onclick="appendToResult('6')"/>
+      <input type="button" value="5" class="input-button" onclick="appendToResult('5')"/>
+      <input type="button" value="4" class="input-button" onclick="appendToResult('4')"/>
+      <input type="button" value="+" class="input-button" onclick="appendToResult('+')"/>
 
-      <input type="button" value="1" class="input-button" />
-      <input type="button" value="2" class="input-button" />
-      <input type="button" value="3" class="input-button" />
+      <input type="button" value="1" class="input-button" onclick="appendToResult('1')"/>
+      <input type="button" value="2" class="input-button" onclick="appendToResult('2')"/>
+      <input type="button" value="3" class="input-button" onclick="appendToResult('3')"/>
 
-      <input type="button" value="=" id="equal" />
-      <input type="button" value="0" class="input-button" />
-      <input type="button" value="." class="input-button" />
+      <input type="button" value="=" id="equal" onclick="calculateResult()"/>
+      <input type="button" value="0" class="input-button" onclick="appendToResult('0')"/>
+      <input type="button" value="." class="input-button" onclick="appendToResult('.')"/>
     </div>
   </div>
 
