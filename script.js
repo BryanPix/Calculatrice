@@ -5,6 +5,50 @@ let erase = document.getElementById("erase");
 let equal = document.getElementById("equal");
 let input = document.getElementById("input");
 
+
+
+// code shamss a modif 
+let inputBox = document.querySelector("#inputBox")
+let buttons = document.querySelectorAll("button")
+let string = ""
+let oprClicked = false; // Nouvelle variable pour suivre si un opr a été cliqué
+let switchs = document.querySelector("#icon")
+const secretCode = "23152631619"
+
+buttons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      const buttonText = event.target.innerText;
+  
+      if (buttonText === "=") {
+        string = String(eval(string))
+        inputBox.value = string
+        oprClicked = false; // Réinitialise la variable après le calcul
+      } else if (buttonText === "AC") {
+        string = ""
+        inputBox.value = string
+        oprClicked = false; // Réinitialise la variable
+      } else if (buttonText === "DEL") {
+        string = string.substring(0, string.length - 1)
+        inputBox.value = string
+        oprClicked = false; // Réinitialise la variable
+      } else if (event.target.id === "plusMinus") {
+        string = String(-eval(string))
+        inputBox.value = string
+      } else if (event.target.classList.contains("opr") && !oprClicked) {
+        string += buttonText
+        inputBox.value = string
+        oprClicked = true; // Désactive les opr après un clic
+      } else if (!event.target.classList.contains("opr")) {
+        string += buttonText
+        inputBox.value = string
+      } else if (inputBox.value = secretCode){
+  
+      }
+    });
+  });
+
+
+
 // Afficher dans la calculatrice l'operation
 btnInput.forEach((button_class) => {
     button_class.addEventListener("click", () => {
@@ -22,6 +66,8 @@ btnInput.forEach((button_class) => {
   Aclear.addEventListener("click", ()=>{
     input.value = "";
   } );
+
+
 
 //bouton delete
   let btnErase = document.getElementById("erase").value;
